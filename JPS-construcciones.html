@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JPS Construcciones</title>
+  <meta name="description" content="JPS Construcciones - Obras, reformas y mantenimiento" />
+  <style>
+    :root{
+      --accent:#0b6b4f;
+      --dark:#0f1723;
+      --muted:#6b7280;
+      --card:#ffffff;
+      --bg:#f3f6f8;
+      --maxw:1100px;
+      --radius:12px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; color:var(--dark); background:var(--bg); -webkit-font-smoothing:antialiased}
+    .container{max-width:var(--maxw); margin:0 auto; padding:28px}
+
+    /* Header */
+    header{background:linear-gradient(90deg, rgba(11,107,79,0.06), rgba(11,107,79,0.03)); backdrop-filter: blur(2px);}
+    .top{display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .logo{display:flex; align-items:center; gap:12px}
+    .logo .mark{width:56px; height:56px; border-radius:10px; background:var(--accent); display:grid; place-items:center; color:#fff; font-weight:700}
+    nav{display:flex; gap:18px}
+    nav a{color:var(--dark); text-decoration:none; font-weight:600}
+    .cta{background:var(--accent); color:#fff; border:none; padding:10px 14px; border-radius:10px; cursor:pointer}
+
+    /* Hero */
+    .hero{display:grid; grid-template-columns:1fr 420px; gap:28px; align-items:center; padding:36px 0}
+    .hero h1{font-size:32px; margin:0 0 12px}
+    .hero p{margin:0 0 18px; color:var(--muted)}
+    .stats{display:flex; gap:12px}
+    .stat{background:var(--card); padding:12px 14px; border-radius:10px; box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+
+    /* Card / image */
+    .hero-card{background:linear-gradient(180deg, #fff, #fcfffb); padding:16px; border-radius:14px; box-shadow:0 10px 30px rgba(11,107,79,0.06)}
+    .img-placeholder{height:280px; border-radius:10px; background:linear-gradient(135deg,#e6f3ef,#dfeef0); display:flex; align-items:center; justify-content:center; color:var(--muted)}
+
+    /* Services */
+    .services{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:26px}
+    .service{background:var(--card); padding:16px; border-radius:12px; box-shadow:0 6px 18px rgba(16,24,40,0.04)}
+    .service h3{margin:0 0 8px}
+    .service p{margin:0; color:var(--muted); font-size:14px}
+
+    /* Gallery */
+    .gallery{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:20px}
+    .gallery .tile{background:#fff; padding:0; border-radius:8px; height:110px; display:block}
+
+    /* Contact */
+    .contact{display:grid; grid-template-columns:1fr 360px; gap:20px; margin:34px 0}
+    .contact form{background:var(--card); padding:18px; border-radius:12px; box-shadow:0 10px 30px rgba(2,6,23,0.04)}
+    label{display:block; font-size:13px; margin-bottom:6px}
+    input, textarea{width:100%; padding:10px 12px; border-radius:8px; border:1px solid #e6e9ee}
+    textarea{min-height:120px; resize:vertical}
+
+    footer{padding:26px 0; color:var(--muted); font-size:14px}
+
+    /* responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .contact{grid-template-columns:1fr}
+      .services{grid-template-columns:repeat(2,1fr)}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      nav{display:none}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container top">
+      <div class="logo">
+        <div class="mark">JPS</div>
+        <div>
+          <div style="font-weight:800">JPS Construcciones</div>
+          <div style="font-size:13px; color:var(--muted)">Obras • Reformas • Mantenimiento</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#servicios">Servicios</a>
+        <a href="#galeria">Galería</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <button class="cta" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Pedir presupuesto</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h1>Construcciones y reformas con responsabilidad y garantía</h1>
+        <p>Realizamos obras integrales, refacciones, instalaciones eléctricas y trabajos de albañilería en la Zona — servicio profesional, presupuestos claros y cumplimiento de plazos.</p>
+        <div class="stats">
+          <div class="stat"><strong>+10</strong><div style="font-size:12px;color:var(--muted)">Años de experiencia</div></div>
+          <div class="stat"><strong>200+</strong><div style="font-size:12px;color:var(--muted)">Proyectos entregados</div></div>
+        </div>
+
+        <div id="servicios" class="services">
+          <div class="service">
+            <h3>Obras civiles</h3>
+            <p>Construcción de viviendas, ampliaciones y estructuras.</p>
+          </div>
+          <div class="service">
+            <h3>Reformas</h3>
+            <p>Refacciones de cocinas, baños y espacios interiores.</p>
+          </div>
+          <div class="service">
+            <h3>Instalaciones</h3>
+            <p>Electricidad, plomería y gas por profesionales matriculados.</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <div class="img-placeholder">
+          <!-- Reemplaza con una imagen real del proyecto: <img src="img/proyecto.jpg" alt="Proyecto" style="width:100%;height:100%;object-fit:cover;border-radius:8px"> -->
+          Imagen del proyecto
+        </div>
+        <div style="margin-top:12px">
+          <strong>Atención personalizada</strong>
+          <p style="margin:6px 0 0;color:var(--muted);font-size:14px">Coordinamos visitas, mediciones y entregamos presupuesto sin costo.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section id="galeria">
+      <h2>Galería de trabajos</h2>
+      <div class="gallery" aria-hidden="false">
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+        <div class="tile"></div>
+      </div>
+    </section>
+
+    <section id="contacto" class="contact">
+      <div>
+        <h2>Contactanos</h2>
+        <p style="color:var(--muted)">Mandanos un mensaje y te respondemos a la brevedad. También podés llamar o enviar WhatsApp.</p>
+        <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap">
+          <div style="background:var(--card); padding:12px; border-radius:10px; box-shadow:0 6px 18px rgba(16,24,40,0.04)">
+            <div style="font-weight:700">Teléfono</div>
+            <div style="color:var(--muted)">+54 9 11 1234 5678</div>
+          </div>
+          <div style="background:var(--card); padding:12px; border-radius:10px; box-shadow:0 6px 18px rgba(16,24,40,0.04)">
+            <div style="font-weight:700">Email</div>
+            <div style="color:var(--muted)">contacto@jpsconstrucciones.com</div>
+          </div>
+        </div>
+      </div>
+
+      <form onsubmit="event.preventDefault(); alert('Enviar formulario (simulado) — reemplazá esta función con tu backend o mailto)');">
+        <label>Nombre</label>
+        <input required placeholder="Tu nombre" />
+        <label>Teléfono / WhatsApp</label>
+        <input required placeholder="Ej: 11 1234 5678" />
+        <label>Mensaje</label>
+        <textarea placeholder="Contanos qué necesitás"></textarea>
+        <div style="display:flex; gap:8px; margin-top:10px">
+          <button class="cta" type="submit">Enviar</button>
+          <button type="button" style="padding:10px 12px;border-radius:8px;border:1px solid #e6e9ee;background:#fff;">Llamar</button>
+        </div>
+      </form>
+    </section>
+
+    <footer>
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap">
+        <div>© <strong>JPS Construcciones</strong> — Todos los derechos reservados</div>
+        <div style="color:var(--muted)">Dirección ejemplo · Ciudad · Provincia</div>
+      </div>
+    </footer>
+  </main>
+
+</body>
+</html>
